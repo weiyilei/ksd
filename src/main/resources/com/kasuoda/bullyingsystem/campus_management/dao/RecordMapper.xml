@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kasuoda.bullyingsystem.campus_management.dao.RecordMapper">
+
+
+    <resultMap id="parentHaveDone" type="parentHaveDoneRecord">
+        <result column="layer" property="layer"></result>
+        <result column="position" property="position"></result>
+        <result column="room_type" property="roomType"></result>
+        <result column="record_time" property="recordTime"></result>
+        <result column="pname" property="uploadPerson"></result>
+        <result column="bully_time" property="bullyTime"></result>
+        <result column="parent_msg" property="parentMsg"></result>
+        <result column="account_type" property="accountType"></result>
+        <result column="state" property="state"></result>
+        <result column="teacher_msg" property="teacherMsg"></result>
+        <result column="tname" property="dealPerson"></result>
+        <result column="is_bully" property="isBully"></result>
+    </resultMap>
+    <insert id="insertrecord"></insert>
+    <update id="updateState">
+        update record set state =2, teacher_msg=#{msg}  where state=1 and id=#{id};
+    </update>
+
+
+    <select id="selectParentHaveDone" resultMap="parentHaveDone">
+        select r.*,p.name pname,t.name tname from record r left join parent p on r.submit_id = p.id left join teacher t
+        on r.deal_id = t.id where r.submit_id = #{submitId} and  (r.teacher_msg is not null) and r.teacher_msg!=""
+    </select>
+
+
+    <resultMap id="parentRightNow" type="parentRightNowRecord">
+        <result column="layer" property="layer"></result>
+        <result column="position" property="position"></result>
+        <result column="room_type" property="roomType"></result>
+        <result column="record_time" property="recordTime"></result>
+        <result column="pname" property="uploadPerson"></result>
+        <result column="bully_time" property="bullyTime"></result>
+        <result column="parent_msg" property="parentMsg"></result>
+        <result column="account_type" property="accountType"></result>
+        <result column="state" property="state"></result>
+    </resultMap>
+    <select id="selectParentRightNow" resultMap="parentRightNow">
+        select r.*,p.name pname,t.name tname from record r left join parent p on r.submit_id = p.id left join teacher t
+        on r.deal_id = t.id where r.submit_id = #{submitId} and (r.teacher_msg is null or r.teacher_msg="");
+    </select>
+
+
+
+    <resultMap id="teacherHaveDone" type="teacherHaveDoneRecord">
+        <result column="layer" property="layer"></result>
+        <result column="position" property="position"></result>
+        <result column="room_type" property="roomType"></result>
+        <result column="record_time" property="recordTime"></result>
+        <result column="pname" property="uploadPerson"></result>
+        <result column="bully_time" property="bullyTime"></result>
+        <result column="parent_msg" property="parentMsg"></result>
+        <result column="account_type" property="accountType"></result>
+        <result column="state" property="state"></result>
+        <result column="teacher_msg" property="teacherMsg"></result>
+        <result column="tname" property="dealPerson"></result>
+        <result column="is_bully" property="isBully"></result>
+        <result column="level" property="level"></result>
+    </resultMap>
+    <select id="selectTeacherHaveDone" resultMap="teacherHaveDone">
+        select r.*,p.name pname,t.name tname from record r left join parent p on r.submit_id = p.id left join teacher t
+        on r.deal_id = t.id where r.deal_id = #{dealId} and (r.teacher_msg is not null) and r.teacher_msg!=""
+    </select>
+
+
+
+    <resultMap id="teacherRightNow" type="teacherRightNowRecord">
+        <result column="layer" property="layer"></result>
+        <result column="position" property="position"></result>
+        <result column="room_type" property="roomType"></result>
+        <result column="record_time" property="recordTime"></result>
+        <result column="pname" property="uploadPerson"></result>
+        <result column="bully_time" property="bullyTime"></result>
+        <result column="parent_msg" property="parentMsg"></result>
+        <result column="account_type" property="accountType"></result>
+        <result column="state" property="state"></result>
+        <result column="level" property="level"></result>
+    </resultMap>
+    <select id="selectTeacherRightNow" resultMap="teacherRightNow">
+        select r.*,p.name pname,t.name tname from record r left join parent p on r.submit_id = p.id left join teacher t
+        on r.deal_id = t.id where r.deal_id = #{dealId} and (r.teacher_msg is null or r.teacher_msg="");
+    </select>
+
+
+
+    <select id="getrecordmaxid" resultType="java.lang.Integer">select max(id) from record;</select>
+
+    <select id="getRecordNumberByPosition" resultType="java.lang.Integer">select count(*)
+                                                                          from record where  location=#{position}</select>
+    <select id="getMessageByPosition"
+            resultType="com.kasuoda.bullyingsystem.campus_management.vo.BullyMessageAccordingPositionraw">
+        select record.id as id ,date_format(bully_time,"%Y-%m-%d %T") as bully_time,layer,detail_position,student_id from record join record_student rs on record.id = rs.record_id where location=#{position} order by id;
+    </select>
+
+</mapper>

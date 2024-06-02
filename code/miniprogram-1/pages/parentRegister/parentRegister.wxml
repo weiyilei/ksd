@@ -1,0 +1,38 @@
+<view style="padding:20rpx; margin-top: 150rpx;">
+ <view style="font-size: 60rpx;font-weight: bold;text-align: center;"> 
+  家长注册
+ </view>
+ <view style="margin: 60rpx 150rpx;">
+  <van-field
+    model:value="{{ name }}"
+    left-icon="user-o"
+    placeholder="请输入姓名"
+  />
+ </view>
+ <view style="margin: 60rpx 150rpx;">
+  <van-field
+    model:value="{{ password }}"
+    left-icon="lock"
+    placeholder="请输入密码"
+  />
+ </view>
+ <view style="margin: 60rpx 150rpx;">
+  <van-field
+    model:value="{{ telephone }}"
+    left-icon="user-o"
+    placeholder="请输入手机号码"
+  />
+ </view>
+ <view style="margin: 60rpx 150rpx;">
+  <van-field
+    model:value="{{ studentname }}"
+    left-icon="user-o"
+    placeholder="请输入学生姓名"
+  />
+ </view>
+ <view style="margin: 60rpx 150rpx;">
+  <van-button type="primary" bind:click="regist">
+    注 册
+  </van-button>
+ </view>
+</view>

@@ -1,0 +1,8 @@
+<view style="padding: 20rpx; margin-top: 50rpx;">
+  <van-cell-group>
+    <van-cell title="name" value="{{user.name}}"></van-cell>
+    <van-cell title="password" value="{{user.password}}"></van-cell>
+    <van-cell title="telephone" value="{{user.telephone}}"></van-cell>
+    <van-cell title="type" value="{{user.type}}"></van-cell>
+  </van-cell-group> 
+</view>

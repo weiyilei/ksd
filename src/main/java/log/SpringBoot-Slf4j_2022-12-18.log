@@ -1,0 +1,39 @@
+2022-12-18 16:46:55.582 [http-nio-8181-exec-5] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/a, version : 1.2.5, lastPacketReceivedIdleMillis : 66243
+2022-12-18 17:07:43.411 [main] INFO  c.kasuoda.bullyingsystem.BullyingsystemApplication - Starting BullyingsystemApplication using Java 1.8.0_212 on DESKTOP-AMGN17N with PID 2568 (D:\bullyingsystem\target\classes started by admin in D:\bullyingsystem)
+2022-12-18 17:07:43.420 [main] INFO  c.kasuoda.bullyingsystem.BullyingsystemApplication - No active profile set, falling back to default profiles: default
+2022-12-18 17:07:43.448 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2022-12-18 17:07:46.311 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-18 17:07:46.343 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2022-12-18 17:07:47.108 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8181 (http)
+2022-12-18 17:07:47.121 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8181"]
+2022-12-18 17:07:47.122 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-12-18 17:07:47.122 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022-12-18 17:07:47.315 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-12-18 17:07:47.315 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3666 ms
+2022-12-18 17:07:47.401 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-12-18 17:07:47.649 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-12-18 17:07:50.105 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-18 17:07:50.192 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-12-18 17:07:50.365 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-18 17:07:50.513 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-12-18 17:07:51.300 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-18 17:07:51.314 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-18 17:07:54.212 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-18 17:07:54.347 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-12-18 17:07:54.850 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8181"]
+2022-12-18 17:07:54.869 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8181 (http) with context path ''
+2022-12-18 17:07:54.870 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-12-18 17:07:54.893 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-12-18 17:07:54.919 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-12-18 17:07:54.947 [main] INFO  c.kasuoda.bullyingsystem.BullyingsystemApplication - Started BullyingsystemApplication in 12.569 seconds (JVM running for 17.239)
+2022-12-18 17:08:03.022 [http-nio-8181-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-18 17:08:03.023 [http-nio-8181-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-12-18 17:08:03.024 [http-nio-8181-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-12-18 17:08:03.180 [http-nio-8181-exec-1] INFO  c.k.b.c.controller.RecordController - 进入Controller 老师开始对每个地点选中的霸凌行为的打开处理
+2022-12-18 17:08:03.249 [http-nio-8181-exec-1] INFO  c.k.b.c.service.impl.RecordServiceImpl - Service层 老师开始对每个地点选中的霸凌行为的打开处理的结果返回
+2022-12-18 17:08:05.135 [http-nio-8181-exec-2] INFO  c.k.b.c.controller.RecordController - 进入Controller 每个地点选中的霸凌行为的详细信息展示
+2022-12-18 17:08:05.165 [http-nio-8181-exec-2] INFO  c.k.b.c.service.impl.RecordServiceImpl - Service层 每个地点选中的霸凌行为的详细信息展示的结果返回
+2022-12-18 17:08:06.794 [http-nio-8181-exec-3] INFO  c.k.b.c.controller.RecordController - 进入Controller 每个地点霸凌信息列表
+2022-12-18 17:08:06.801 [http-nio-8181-exec-3] INFO  c.k.b.c.service.impl.RecordServiceImpl - Service层 每个地点霸凌信息列表结果返回
+2022-12-18 17:08:08.767 [http-nio-8181-exec-5] INFO  c.k.b.c.controller.RecordController - 进入Controller 每个地点霸凌事件的个数
+2022-12-18 17:08:08.792 [http-nio-8181-exec-5] INFO  c.k.b.c.service.impl.RecordServiceImpl - Service层 每个地点霸凌事件的个数的结果返回
